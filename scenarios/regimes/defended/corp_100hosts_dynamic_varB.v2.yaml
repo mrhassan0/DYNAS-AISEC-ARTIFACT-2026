@@ -1,0 +1,480 @@
+subnets:
+- 6-8
+- 6-8
+- 6-8
+- 6-8
+- 6-8
+- 6-8
+- 6-8
+- 6-8
+- 6-8
+- 6-8
+- 6-8
+- 6-8
+address_space_bounds: (13, 10)
+topology:
+- - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+- - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+- - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+- - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+- - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 1
+  - 0
+  - 0
+  - 1
+- - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+- - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+- - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+- - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 1
+subnet_labels:
+  1: DMZ
+  2: user
+  3: service
+  4: db
+  5: dev
+  6: app
+  7: app2
+  8: app3
+  9: web
+  10: office
+  11: research
+  12: backups
+sensitive_hosts:
+  1: 0.0
+  2: 0.0
+  3: 0.4
+  4: 0.4
+  5: 0.1
+  6: 0.2
+  7: 0.1
+  8: 0.3
+  9: 0.6
+  10: 0.1
+  11: 0.7
+  12: 0.8
+os:
+- linux
+- windows
+services:
+- 22_linux_ssh
+- 23_linux_telnet
+- 21_linux_vsftpd
+- 25_linux_smtp_exim
+- 389_linux_ldap
+- 2049_linux_nfs
+- 445_linux_samba
+- 5432_linux_postgres
+- 27017_linux_mongodb
+- 6379_linux_redis
+- 11211_linux_memcached
+- 5601_linux_kibana
+- 3000_linux_grafana
+- 8080_linux_tomcat_mgr
+- 8081_linux_jenkins
+- 8161_linux_activemq
+- 5900_linux_vnc
+- 69_linux_tftp
+- 53_linux_dns_bind
+- 80_linux_joomla
+- 80_linux_moodle
+- 80_linux_mediawiki
+- 80_linux_phpmyadmin
+- 3306_any_mysql
+- 445_windows_smb
+- 3389_windows_rdp
+- 5985_windows_winrm
+- 135_windows_msrpc
+- 88_windows_kerberos
+- 389_windows_ldap_ad
+- 1433_windows_mssql
+- 80_windows_iis
+sensitive_services:
+- 22_linux_ssh
+- 445_windows_smb
+- 3306_any_mysql
+processes:
+- p_linux_polkit_pkexec
+- p_linux_sudo_misconfig
+- p_linux_suid_bin
+- p_linux_cron_root
+- p_linux_docker_sock
+- p_linux_kernel_dirty_pipe
+- p_windows_spooler
+- p_windows_unquoted_service_path
+- p_windows_weak_service_perms
+- p_windows_se_impersonate
+- p_windows_uac_bypass
+- p_windows_dll_hijack
+- p_windows_vuln_driver
+service_probabilities:
+  22_linux_ssh: 0.85
+  23_linux_telnet: 0.1
+  21_linux_vsftpd: 0.65
+  25_linux_smtp_exim: 0.65
+  389_linux_ldap: 0.7
+  2049_linux_nfs: 0.65
+  445_linux_samba: 0.75
+  5432_linux_postgres: 0.8
+  27017_linux_mongodb: 0.55
+  6379_linux_redis: 0.55
+  11211_linux_memcached: 0.55
+  5601_linux_kibana: 0.15
+  3000_linux_grafana: 0.15
+  8080_linux_tomcat_mgr: 0.65
+  8081_linux_jenkins: 0.15
+  8161_linux_activemq: 0.1
+  5900_linux_vnc: 0.65
+  69_linux_tftp: 0.1
+  53_linux_dns_bind: 0.85
+  80_linux_joomla: 0.6
+  80_linux_moodle: 0.15
+  80_linux_mediawiki: 0.6
+  80_linux_phpmyadmin: 0.6
+  3306_any_mysql: 0.8
+  445_windows_smb: 0.85
+  3389_windows_rdp: 0.6
+  5985_windows_winrm: 0.6
+  135_windows_msrpc: 0.6
+  88_windows_kerberos: 0.6
+  389_windows_ldap_ad: 0.6
+  1433_windows_mssql: 0.85
+  80_windows_iis: 0.1
+process_probabilities:
+  p_linux_polkit_pkexec: 0.45
+  p_linux_sudo_misconfig: 0.35
+  p_linux_suid_bin: 0.15
+  p_linux_cron_root: 0.2
+  p_linux_docker_sock: 0.15
+  p_linux_kernel_dirty_pipe: 0.1
+  p_windows_spooler: 0.75
+  p_windows_unquoted_service_path: 0.6
+  p_windows_weak_service_perms: 0.35
+  p_windows_se_impersonate: 0.25
+  p_windows_uac_bypass: 0.2
+  p_windows_dll_hijack: 0.15
+  p_windows_vuln_driver: 0.15
+exploits:
+  e_vsftpd:
+    service: 21_linux_vsftpd
+    os: linux
+    prob: 0.65
+    cost: 2
+    access: user
+  e_tomcat_mgr:
+    service: 8080_linux_tomcat_mgr
+    os: linux
+    prob: 0.6
+    cost: 2
+    access: user
+  e_jenkins:
+    service: 8081_linux_jenkins
+    os: linux
+    prob: 0.45
+    cost: 3
+    access: user
+  e_smb_win:
+    service: 445_windows_smb
+    os: windows
+    prob: 0.55
+    cost: 3
+    access: user
+  e_rdp:
+    service: 3389_windows_rdp
+    os: windows
+    prob: 0.45
+    cost: 3
+    access: user
+  e_mysql:
+    service: 3306_any_mysql
+    os: none
+    prob: 0.75
+    cost: 2
+    access: user
+  e_mssql:
+    service: 1433_windows_mssql
+    os: windows
+    prob: 0.55
+    cost: 3
+    access: user
+  e_postgres:
+    service: 5432_linux_postgres
+    os: linux
+    prob: 0.65
+    cost: 2
+    access: user
+privilege_escalation:
+  pe_polkit:
+    process: p_linux_polkit_pkexec
+    os: linux
+    prob: 0.65
+    cost: 1
+    access: root
+  pe_polkit_any:
+    process: p_linux_polkit_pkexec
+    os: none
+    prob: 0.55
+    cost: 1
+    access: root
+  pe_sudo:
+    process: p_linux_sudo_misconfig
+    os: linux
+    prob: 0.55
+    cost: 1
+    access: root
+  pe_sudo_any:
+    process: p_linux_sudo_misconfig
+    os: none
+    prob: 0.45
+    cost: 1
+    access: root
+  pe_spooler:
+    process: p_windows_spooler
+    os: windows
+    prob: 0.65
+    cost: 1
+    access: root
+  pe_unquoted:
+    process: p_windows_unquoted_service_path
+    os: windows
+    prob: 0.55
+    cost: 1
+    access: root
+service_scan_cost: 1
+os_scan_cost: 1
+subnet_scan_cost: 1
+process_scan_cost: 1
+host_configurations: _random
+firewall: _subnets
+curriculum:
+  enabled: true
+  stages:
+  - name: full_defense_from_start
+    start_epoch: 0
+    end_epoch: 999999
+    ids:
+      enabled: true
+      detection_decay: 0.98
+      base_thresholds:
+      - 0.65
+      - 0.88
+      response_types:
+        quarantine: 0.1
+        patch: 0.35
+        monitor: 0.55
+      failed_exploit_multiplier: 2.5
+      detection_increase:
+        subnet_scan: 0.012
+        service_scan: 0.03
+        os_scan: 0.018
+        process_scan: 0.018
+        exploit_failed: 0.09
+        exploit_success: 0.05
+        privesc_failed: 0.12
+        privesc_success: 0.06
+    scan_noise:
+      service_scan:
+        false_positive_rate: 0.03
+        false_negative_rate: 0.05
+      os_scan:
+        false_positive_rate: 0.015
+        false_negative_rate: 0.03
+      process_scan:
+        false_positive_rate: 0.04
+        false_negative_rate: 0.07
+    network_reliability:
+      timeout_probability: 0.015
+      affected_actions:
+      - exploit
+      - privilege_escalation
+      retry_cost: 0
+      timeout_types:
+      - type: packet_loss
+        probability: 0.7
+        duration: 1
+      - type: network_congestion
+        probability: 0.25
+        duration:
+        - 2
+        - 4
+      - type: routing_issue
+        probability: 0.05
+        duration:
+        - 4
+        - 7
+    service_dynamics:
+      churn_probability: 0.01
+      affected_services:
+      - 80_linux_joomla
+      - 8080_linux_tomcat_mgr
+      - 8081_linux_jenkins
+      - 3306_any_mysql
+      - 5432_linux_postgres
+      - 27017_linux_mongodb
+      restart_delay: 10
+      churn_types:
+      - type: crash_restart
+        probability: 0.85
+        down_duration:
+        - 5
+        - 12
+      - type: maintenance
+        probability: 0.15
+        down_duration:
+        - 15
+        - 30
