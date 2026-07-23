@@ -189,8 +189,10 @@ reported evaluation figures.
 
 ---
 
-## License
+## Provenance & License
 
-See [LICENSE](LICENSE). The simulator derives from the Network Attack Simulator
-and NASimEmu projects; their licenses are retained in the respective source
-trees.
+This artifact builds on the open-source **NASimEmu** framework (MIT-licensed),
+which itself derives from the Network Attack Simulator. Upstream copyright
+notices are retained unchanged in [LICENSE](LICENSE) and in the respective
+source trees, as the MIT license requires. All modifications introduced for this
+submission are released under the same MIT license.
