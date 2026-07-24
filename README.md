@@ -1,12 +1,11 @@
 # Pen-DHRL: Deep Hierarchical RL for Generalizing Penetration-Testing Agents
 
-Artifact for the AISec 2026 submission. This repository contains the simulator,
-the hierarchical RL agent (Pen-DHRL), the dynamic corporate-network scenarios,
-and the scripts needed to reproduce the training and evaluation results reported
-in the paper.
+Artifact for the AISec 2026 submission. This anonymized repository provides supporting evidence for the work presented in the paper, including the simulator, the hierarchical reinforcement learning agent (Pen-DHRL), dynamic corporate-network scenarios, and selected training and evaluation scripts.
 
-> **Anonymity note.** This is an anonymized snapshot prepared for double-blind
-> review. It contains only the components used to produce the reported results.
+The repository covers most of the components and experiments described in the paper; however, it is not intended to serve as a complete, fully reproducible package. Some implementation details, configurations, auxiliary files, or experimental components may be omitted from this review snapshot.
+
+> **Anonymity note.** This repository was prepared specifically for double-blind review and contains only the materials considered relevant for evaluating and verifying the reported work.
+
 
 ---
 
